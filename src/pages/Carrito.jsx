@@ -1,6 +1,6 @@
 import ListadoCarrito from "../components/ListadoCarrito"
 import useTitulo from "../hooks/useTitulo"
-import './carrito.scss'
+import './Carrito.scss'
 
 const Carrito = () => {
 
