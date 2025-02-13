@@ -21,7 +21,7 @@ const Footer = () => {
                 className="link-redes"
               >
                 <img
-                  src="./public/img/instagram.svg"
+                  src="/instagram.svg"
                   alt="instagram"
                   className="icon"
                 />
@@ -30,7 +30,7 @@ const Footer = () => {
             <li className="list-redes">
               <a href="https://x.com/NaturaArgentina">
                 <img
-                  src="./public/img/twitter.svg"
+                  src="/twitter.svg"
                   alt="twitter"
                   className="icon"
                 />
@@ -42,7 +42,7 @@ const Footer = () => {
       <div className="section-derechos">
         <a href="../index.html">
           <img
-            src="./public/img/rita.svg"
+            src="/rita.svg"
             alt="logo"
             className="search-bar__logo"
           />
