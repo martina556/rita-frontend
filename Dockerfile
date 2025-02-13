@@ -1,6 +1,11 @@
-# Copia el archivo package.json y package-lock.json al contenedor
-COPY package*.json ./
+# Usa una imagen oficial de Node.js como base para construir la aplicación
+FROM node:18-alpine AS build
 
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copia los archivos package.json y package-lock.json (o yarn.lock si usas Yarn)
+COPY package.json package-lock.json ./
 # Instala las dependencias del proyecto
 RUN npm install
 
