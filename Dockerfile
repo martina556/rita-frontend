@@ -1,29 +1,20 @@
-# Usa una imagen oficial de Node.js como base para construir la aplicación
-FROM node:18-alpine AS build
+# Copia el archivo package.json y package-lock.json al contenedor
+COPY package*.json ./
 
-# Establece el directorio de trabajo dentro del contenedor
-WORKDIR /app
-
-# Copia los archivos package.json y package-lock.json (o yarn.lock si usas Yarn)
-COPY package.json package-lock.json ./
-
-# Instala las dependencias
+# Instala las dependencias del proyecto
 RUN npm install
 
-# Copia el resto de los archivos del proyecto
+# Copia el resto del código de la aplicación al contenedor
 COPY . .
 
-# Construye la aplicación
+# Construye la aplicación para producción
 RUN npm run build
 
-# Usa una imagen ligera de Nginx para servir la aplicación
-FROM nginx:alpine
+# Instala un servidor estático para servir la aplicación
+RUN npm install -g serve
 
-# Copia los archivos generados en la carpeta de build al directorio de Nginx
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Expone el puerto 80 para que se pueda acceder a la aplicación
+# Expone el puerto en el que la aplicación se ejecutará
 EXPOSE 5173
 
-# Inicia Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Comando para ejecutar la aplicación
+CMD ["serve", "-s", "dist"]
