@@ -21,7 +21,7 @@ const Footer = () => {
                 className="link-redes"
               >
                 <img
-                  src="/instagram.svg"
+                  src="./public/img/instagram.svg"
                   alt="instagram"
                   className="icon"
                 />
