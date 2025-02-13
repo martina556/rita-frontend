@@ -30,7 +30,7 @@ const Footer = () => {
             <li className="list-redes">
               <a href="https://x.com/NaturaArgentina">
                 <img
-                  src="/twitter.svg"
+                  src="./public/img/twitter.svg"
                   alt="twitter"
                   className="icon"
                 />
@@ -42,7 +42,7 @@ const Footer = () => {
       <div className="section-derechos">
         <a href="../index.html">
           <img
-            src="/rita.svg"
+            src="./public/img/rita.svg"
             alt="logo"
             className="search-bar__logo"
           />
