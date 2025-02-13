@@ -115,7 +115,7 @@
     flex-wrap: wrap;
   }
 
-  &__form-label {
+/*   &__form-label {
     background-color: white;
     width: 4rem;
     display: flex;
@@ -124,7 +124,7 @@
     border-radius: 8px 0 0 8px;
     color: #004532;
     height: 2rem;
-  }
+  } */
 
   &__form-search {
     background-color: white;
@@ -133,6 +133,7 @@
     height: 2rem;
     caret-color: #004532;
     padding: 0.5rem;
+    border-radius: 8px 0px 0px 8px;
   }
 
   &__form-submit {

@@ -36,6 +36,10 @@ const ProductosProvider =({children}) => {
     headers: {'content-type' : 'application/json'},
     body: JSON.stringify(nuevoProducto)
  }
+ console.log(options,"OPTIONS");
+ console.log(url, "URL");
+ 
+ 
  const newProducto = await helperPeticionesHttp(url, options)
 
  setProductos ([...productos, newProducto])

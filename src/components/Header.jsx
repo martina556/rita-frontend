@@ -18,7 +18,7 @@ const Header = () => {
         </a>
       </div>
       <form action="#" className="search-bar__form-container">
-        <label htmlFor="busqueda" className="search-bar__form-label"></label>
+        {/* <label htmlFor="busqueda" className="search-bar__form-label"></label> */}
         <input type="search" className="search-bar__form-search" id="busqueda" />
         <button type="submit" className="search-bar__form-submit">
             <svg
