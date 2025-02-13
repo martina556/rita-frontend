@@ -21,4 +21,4 @@ spec:
           image: ghcr.io/martina556/rita:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 4000
+            - containerPort: 3000
