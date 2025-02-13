@@ -21,7 +21,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          IMAGE_NAME=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE_NAME="lucasmaraz/rita-frontend"
           docker buildx build --platform linux/amd64 -t ghcr.io/$IMAGE_NAME:latest --push .
 
       - name: Apply Deployment Manifest
@@ -29,7 +29,7 @@ jobs:
 
       - name: Update K3s Deployment
         run: |
-          IMAGE_NAME=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE_NAME="lucasmaraz/rita-frontend"
           kubectl set image deployment/rita-deployment rita=ghcr.io/$IMAGE_NAME:latest -n default
           kubectl rollout status deployment/rita-deployment -n default
 
