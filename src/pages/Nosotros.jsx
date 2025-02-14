@@ -34,7 +34,7 @@ const Nosotros = () => {
         <div className="section-nosotros-cards__mision-vision-valores">
           <div className="icon-cards">
             <img
-              src="./public/img/grafico.svg"
+              src="/img/grafico.svg"
               alt="grafico"
               className="icon-cards__imagen"
             />
@@ -51,7 +51,7 @@ const Nosotros = () => {
         <div className="section-nosotros-cards__mision-vision-valores">
           <div className="icon-cards">
             <img
-              src="./public/img/eye.svg"
+              src="/img/eye.svg"
               alt="ojo"
               className="icon-cards__imagen"
             />
@@ -68,7 +68,7 @@ const Nosotros = () => {
         <div className="section-nosotros-cards__mision-vision-valores">
           <div className="icon-cards">
             <img
-              src="./public/img/handshake.svg"
+              src="/img/handshake.svg"
               alt="manos"
               className="icon-cards__imagen"
             />
