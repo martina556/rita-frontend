@@ -1,16 +1,22 @@
 import { createContext, useEffect, useState } from 'react';
 import { helperPeticionesHttp } from '../helpers/helper-peticiones-http';
+import { UseUserContext } from './UsuarioContext';
 
 const ProductosContext = createContext("TEST");
 
-// eslint-disable-next-line react/prop-types
+
+
 const ProductosProvider =({children}) => {
     
     const url= import.meta.env.VITE_BACKEND_PRODUCTOS
 
     const [productos, setProductos] = useState(null)
 
-    const [productoAEditar, setProductoAEditar, setProductoAEliminar] = useState(null)
+    const [productoAEditar, setProductoAEditar] = useState(null)
+
+    const { userName } = UseUserContext(); 
+
+    const [error403, setError403] = useState(false);
 
 
     useEffect(() => {
@@ -34,11 +40,17 @@ const ProductosProvider =({children}) => {
     const options={
     method: 'POST',
     headers: {'content-type' : 'application/json'},
-    body: JSON.stringify(nuevoProducto)
+    body: JSON.stringify({ ...nuevoProducto, userName }),
+    
+
  }
  console.log(options,"OPTIONS");
  console.log(url, "URL");
  
+ if (response.status === 403) {
+    setError403(true);
+    return;
+ }
  
  const newProducto = await helperPeticionesHttp(url, options)
 
@@ -58,13 +70,19 @@ const actualizarProductoContext = async (productoEditado) => {
     const options = {
         method: 'PUT',
         headers:{'content-type' : 'application/json'},
-        body: JSON.stringify(productoEditado)
+        body: JSON.stringify({ ...productoEditado, userName })
     }
-     const urlEdicion= url + productoEditado.id
+     const urlEdicion= `${url}/${productoEditado.id}`;
      const editedProducto = await helperPeticionesHttp(urlEdicion, options)
+
+     if (response.status === 403) {
+        setError403(true);
+        return;
+     }
 
      const nuevoEstadoProducto = productos.map(producto => producto.id === editedProducto.id ? productoEditado :producto)
      setProductos(nuevoEstadoProducto)
+    
     } catch (error) {
         
         console.error('[actualizarProductoContext', error)
@@ -75,11 +93,17 @@ const eliminarProductoContext = async (productoId) => {
     try {
         const options = {
             method: 'DELETE',
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userName }),
         };
 
         const urlDelete = `${url}/${productoId}`; // Usa el ID del producto directamente en la URL
         await helperPeticionesHttp(urlDelete, options);
+
+        if (response.status === 403) {
+            setError403(true);
+            return;
+         }
 
         // Actualiza la lista de productos filtrando el producto eliminado
         setProductos((prevProductos) =>
@@ -101,7 +125,9 @@ const data = {
     actualizarProductoContext,
     productoAEditar,
     setProductoAEditar,
-    eliminarProductoContext 
+    eliminarProductoContext,
+    error403,
+    setError403 
 }
 //console.log(data, "DATA")
 //console.log(productos, "context")  

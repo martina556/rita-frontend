@@ -1,7 +1,8 @@
-import './ListadoCarrito.scss'
 import { useContext } from 'react'
 import ItemCarrito from './ItemCarrito.jsx'
 import CarritoContext from '../context/CarritoContext'
+import Modal from './Modal.jsx'
+import './ListadoCarrito.scss'
 
 const ListadoCarrito = () => {
 
@@ -17,8 +18,17 @@ const ListadoCarrito = () => {
     limpiarCarritoContext()
   }
 
+  const { error403, setError403 } = useContext(ProductosContext);
+
+
   return (
     <>
+    {error403 && (
+        <Modal onClose={() => setError403(false)}>
+          No tienes permisos para realizar esta acción.
+        </Modal>
+      )}
+
         <table className='tabla-carrito'>
            {/*  <thead>
                 <tr>

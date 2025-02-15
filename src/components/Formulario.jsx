@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react"
 import ProductosContext from "../context/ProductosContext"
 import { UseUserContext } from "../context/UsuarioContext"
+import Modal from "./Modal"
 import './Formulario.scss'
 
 const Formulario = () => {
@@ -34,6 +35,7 @@ const handleSubmit = async e => {
   e.preventDefault()
 console.log('handleSubmit')
 
+
 try{
   if (form.id === null)
 {
@@ -66,10 +68,18 @@ setForm(formInit)
 setProductoAEditar(null)
 }
 
+const { error403, setError403 } = useContext(ProductosContext);
 
 
   return (
     <>
+
+  {error403 && (
+        <Modal onClose={() => setError403(false)}>
+          No tienes permisos para realizar esta acción.
+        </Modal>
+      )}
+
     <div className="form-alta">
       <div className="form-alta_titulo">
       <h3>Agregar o editar producto</h3>
