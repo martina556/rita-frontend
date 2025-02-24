@@ -10,10 +10,13 @@ export const GlobalUserProvider = ({ children }) => {
   
     useEffect(() => {
       const userName = prompt("Por favor, ingresa tu nombre de usuario:");
-      if (userName) {
+      if (userName && userName.trim() !== "") {
         setUser(userName);
-      }
-    }, []);
+        console.log("Usuario guardado:", userName); 
+    } else {
+        console.warn("No se ingresó un nombre de usuario válido.");
+    }
+}, []);
   
     const isAdmin = user === ADMIN_USER;
 

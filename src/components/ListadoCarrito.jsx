@@ -18,16 +18,11 @@ const ListadoCarrito = () => {
     limpiarCarritoContext()
   }
 
-  const { error403, setError403 } = useContext(ProductosContext);
 
 
   return (
     <>
-    {error403 && (
-        <Modal onClose={() => setError403(false)}>
-          No tienes permisos para realizar esta acción.
-        </Modal>
-      )}
+ 
 
         <table className='tabla-carrito'>
            {/*  <thead>

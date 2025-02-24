@@ -17,7 +17,11 @@ const TablaFila = ({ producto }) => {
     eliminarProductoContext(producto.id);
   };
   
+
+
   return (
+   
+    
     <tr>
       <td>{producto.name}</td>
       <td>{producto.precio}</td>
@@ -30,8 +34,8 @@ const TablaFila = ({ producto }) => {
       </td>
       <td>{producto.envio ? 'SI' : 'NO' }</td>
       <td>
-      <button onClick={() => handleEditar(producto)} disabled={!isAdmin}>Editar</button>
-      <button onClick={() => handleEliminar(producto)} disabled={!isAdmin}>Borrar</button>
+      <button onClick={() => handleEditar(producto)} >Editar</button>
+      <button onClick={() => handleEliminar(producto)} >Borrar</button>
       </td>
     </tr>
   )

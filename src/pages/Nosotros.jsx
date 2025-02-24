@@ -74,7 +74,7 @@ const Nosotros = () => {
             />
           </div>
 
-          <h2>Valores</h2>
+          <h2 >Valores</h2>
           <p className="font-size-15">
             Empatía: conectamos contigo y comprendemos tus necesidades para
             ofrecer soluciones saludables que mejoren tu vida. Cuidado: nos

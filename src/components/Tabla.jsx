@@ -24,8 +24,9 @@ const Tabla = () => {
       </tr>
     </thead>
     <tbody>
-{
-  productos && productos.map(producto=>(
+    
+  {
+  productos && productos?.map(producto=>(
     <TablaFila key={producto.id} producto={producto}/>
   ))
 }

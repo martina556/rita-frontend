@@ -5,11 +5,12 @@ const Footer = () => {
       <div className="section-links">
         <div className="card-info">
           <h3>Informacion</h3>
-          <a href="./nosotros.html" className="link-footer">Nosotros</a>
+          
+          <a href='./nosotros' className="link-footer">Nosotros</a>
         </div>
         <div className="card-ayuda">
           <h3>Ayuda</h3>
-          <a href="./contacto.html" className="link-footer">Contacto</a>
+          <a href='contacto' className="link-footer">Contacto</a>
         </div>
         <div className="card-redes">
           <h3>Redes</h3>
