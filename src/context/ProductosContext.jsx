@@ -8,7 +8,7 @@ const ProductosContext = createContext("TEST");
 
 const ProductosProvider = ({ children }) => {
 
-    const url = import.meta.env.VITE_BACKEND_PRODUCTOS
+    const url = window.env?.VITE_BACKEND_PRODUCTOS || import.meta.env.VITE_BACKEND_PRODUCTOS;
 
     console.log(url, "URL")
 

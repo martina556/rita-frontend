@@ -6,7 +6,7 @@ const GlobalUserContext = createContext();
 
 export const GlobalUserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const ADMIN_USER = import.meta.env.ADMIN_USER;
+    const adminUser = window.env?.ADMIN_USER || import.meta.env.ADMIN_USER;
   
     useEffect(() => {
       const savedUser = localStorage.getItem("userName");

@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rita-deployment
+  namespace: default
   labels:
     app: rita
 spec:
@@ -22,14 +23,11 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
-          env:
-            - name: VITE_BACKEND_PRODUCTOS
-              valueFrom:
-                configMapKeyRef:
-                  name: backend-rita-config
-                  key: VITE_BACKEND_PRODUCTOS
-            - name: ADMIN_USER
-              valueFrom:
-                configMapKeyRef:
-                  name: backend-rita-config
-                  key: ADMIN_USER
+          volumeMounts:
+            - name: frontend-config-volume
+              mountPath: /usr/share/nginx/html/config.js
+              subPath: config.js
+      volumes:
+        - name: frontend-config-volume
+          configMap:
+            name: frontend-config
