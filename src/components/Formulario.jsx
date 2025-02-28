@@ -1,11 +1,8 @@
 import { useContext, useState, useEffect } from "react"
 import ProductosContext from "../context/ProductosContext"
-import { UseUserContext } from "../context/UsuarioContext"
 import './Formulario.scss'
 
 const Formulario = () => {
-
- const { user, isAdmin } = UseUserContext();
 
 const formInit={
   id: null,

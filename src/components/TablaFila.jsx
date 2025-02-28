@@ -5,7 +5,6 @@ import { UseUserContext } from "../context/UsuarioContext";
 
 const TablaFila = ({ producto }) => {
   const { setProductoAEditar, eliminarProductoContext } = useContext(ProductosContext);
-  const { user, isAdmin } = UseUserContext(); 
 
   const handleEditar = () => {
     console.log("Editar...", producto.id);

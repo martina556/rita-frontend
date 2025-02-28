@@ -8,7 +8,7 @@ const ProductosContext = createContext("TEST");
 
 const ProductosProvider = ({ children }) => {
 
-    const url = window.env?.VITE_BACKEND_PRODUCTOS || import.meta.env.VITE_BACKEND_PRODUCTOS;
+    const url = "https://backend-rita.martinafernandez.com/api/v1/productos"
 
     console.log(url, "URL")
 

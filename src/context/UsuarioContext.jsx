@@ -6,7 +6,6 @@ const GlobalUserContext = createContext();
 
 export const GlobalUserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const adminUser = window.env?.ADMIN_USER || import.meta.env.ADMIN_USER;
   
     useEffect(() => {
       const savedUser = localStorage.getItem("userName");
@@ -25,10 +24,9 @@ export const GlobalUserProvider = ({ children }) => {
         }
       }
     }, []);
-    const isAdmin = user === adminUser;
 
     return (
-      <GlobalUserContext.Provider value={{ user, setUser, isAdmin }}>
+      <GlobalUserContext.Provider value={{ user, setUser }}>
         {children}
       </GlobalUserContext.Provider>
     );
