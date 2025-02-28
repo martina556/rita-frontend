@@ -10,6 +10,8 @@ const ProductosProvider = ({ children }) => {
 
     const url = import.meta.env.VITE_BACKEND_PRODUCTOS
 
+    console.log(url, "URL")
+
     const [productos, setProductos] = useState(null)
 
     const [productoAEditar, setProductoAEditar] = useState(null)

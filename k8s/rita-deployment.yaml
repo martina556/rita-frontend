@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rita-backend-deployment
+  name: rita-deployment
   labels:
-    app: rita-backend
+    app: rita
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: rita-backend
+      app: rita
   template:
     metadata:
       labels:
-        app: rita-backend
+        app: rita
     spec:
       imagePullSecrets:
         - name: ghcr-pull-secret
       containers:
-        - name: rita-backend
-          image: ghcr.io/lucasmaraz/rita-backend:latest
+        - name: rita
+          image: ghcr.io/martina556/rita:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 3001
-          env:
+            - containerPort: 3000
+      env:
             - name: VITE_BACKEND_PRODUCTOS
               valueFrom:
                 configMapKeyRef:
                   name: backend-rita-config
                   key: VITE_BACKEND_PRODUCTOS
-            - name: VITE_ADMIN_USER
+            - name: ADMIN_USER
               valueFrom:
                 configMapKeyRef:
                   name: backend-rita-config
-                  key: VITE_ADMIN_USER
+                  key: ADMIN_USER
