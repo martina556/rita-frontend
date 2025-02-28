@@ -8,7 +8,6 @@
 
   @media (max-width: 576px) {
     & {
-      /* .main-header */
       flex-direction: column-reverse;
     }
   }
@@ -22,7 +21,8 @@
   }
 
   &:checked ~ .search-bar .menu-toogle .menu-toogle__label {
-    background-color: yellow;
+    fill: #004532; 
+    transform: rotate(90deg);
   }
 }
 
@@ -115,16 +115,6 @@
     flex-wrap: wrap;
   }
 
-/*   &__form-label {
-    background-color: white;
-    width: 4rem;
-    display: flex;
-    align-items: center;
-    padding: 0.5rem;
-    border-radius: 8px 0 0 8px;
-    color: #004532;
-    height: 2rem;
-  } */
 
   &__form-search {
     background-color: white;
@@ -168,7 +158,7 @@
 
 .menu-toogle {
   display: none;
-  background-color: red;
+  background-color: white;
   flex: 0 0 3rem;
   position: relative;
   cursor: pointer;
@@ -179,37 +169,22 @@
     height: 100%;
   }
 
-  &__top-bread,
-  &__meat,
-  &__bottom-bread {
-    display: block;
-    background-color: white;
-    height: 0.2rem;
+  &__icon{
     position: absolute;
     left: 0.5rem;
     right: 0.5rem;
-  }
-
-  &__top-bread {
-    top: 1.8rem;
-  }
-
-  &__meat {
-    top: 50%;
+    top: 35%;
     margin-top: -0.1rem;
   }
-  &__bottom-bread {
-    bottom: 1.8rem;
-  }
+
 }
 
 @media (max-width: 768px) {
   .menu-toogle {
-    /* .menu-toogle */
     display: block;
-    background-color: white;
+    background-color: #004532;
     &__label {
-      background-color: #004532;
+      background-color: transparent;
     }
   }
   .search-bar {
@@ -222,6 +197,7 @@
   }
 
   #menu:checked ~ .search-bar .menu-toogle .menu-toogle__label {
-    background-color: #004532;
+    fill: #004532; 
+    transform: rotate(90deg);
   }
 }

@@ -44,9 +44,18 @@ const Header = () => {
       </div>
       <div className="menu-toogle">
         <label htmlFor="menu" className="menu-toogle__label">
-          <span className="menu-toogle__top-bread"></span>
-          <span className="menu-toogle__meat"></span>
-          <span className="menu-toogle__bottom-bread"></span>
+        <svg
+      width="30"
+      height="30"
+      viewBox="0 0 30 30"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className='menu-toogle__icon'
+    >
+      <rect y="5" width="30" height="2" fill="#ffffff" />
+      <rect y="14" width="30" height="2" fill="#ffffff" />
+      <rect y="23" width="30" height="2" fill="#ffffff" />
+    </svg>
         </label>
       </div>
     </div>

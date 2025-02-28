@@ -10,6 +10,7 @@ import Modal from './components/Modal'
 const App = () => {
 
   const { error403, setError403 } = useContext(ProductosContext);
+  localStorage.getItem("userName", "userName");
   return (
     <>
       {error403 && (

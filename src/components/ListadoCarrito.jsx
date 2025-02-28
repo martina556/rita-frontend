@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import ItemCarrito from './ItemCarrito.jsx'
 import CarritoContext from '../context/CarritoContext'
-import Modal from './Modal.jsx'
 import './ListadoCarrito.scss'
 
 const ListadoCarrito = () => {
@@ -25,15 +24,6 @@ const ListadoCarrito = () => {
  
 
         <table className='tabla-carrito'>
-           {/*  <thead>
-                <tr>
-                    <th>Foto</th>
-                    <th>Nombre</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead> */}
             <tbody>
                 {
                     carrito.length <= 0 ? (

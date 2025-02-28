@@ -5,6 +5,7 @@ import Nosotros from "../pages/Nosotros"
 import Contacto from "../pages/Contacto"
 import NoEncontrado from "../pages/NoEncontrado"
 import Carrito from "../pages/Carrito"
+import ProductDetail from "../pages/ProductDetail"
 
 const   Rutas = () => {
      const routes = useRoutes(
@@ -26,6 +27,10 @@ const   Rutas = () => {
             {
                 path: '/carrito',
                 element: <Carrito/>
+            },
+            {
+                path: '/producto/:id',
+                element: <ProductDetail/>
             },
             {
                 path: '*',
