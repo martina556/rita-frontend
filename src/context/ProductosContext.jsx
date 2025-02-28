@@ -93,7 +93,7 @@ const ProductosProvider = ({ children }) => {
             console.log(productoId, "productoId");
 
 
-            const urlDelete = `${url}${productoId}`; // Usa el ID del producto directamente en la URL
+            const urlDelete = `${url}/${productoId}`; // Usa el ID del producto directamente en la URL
 
             await axios(urlDelete, config)
 
