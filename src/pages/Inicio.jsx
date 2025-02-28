@@ -19,8 +19,9 @@ const Inicio = () => {
       </header>
 
       <div className="cards-container" >
-     
-
+     {
+      console.log(productos)
+     }
   {
   productos && productos?.map((producto) => (
     <Card key={producto.id} producto={producto} />
