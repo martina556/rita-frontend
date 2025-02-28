@@ -67,22 +67,22 @@ const Contacto = () => {
     allowFullScreen={true}
     loading="lazy"
     referrerPolicy="no-referrer-when-downgrade"
-    className="mapa-responsive" // Nueva clase para el mapa
+    className="mapa-responsive"
   ></iframe>
 </div>
            
             <div className="card-contacto">
               <div className="contacto-imagen">
-                <img src="../public/img/whatsapp.svg" alt="whatsapp" className="contacto-imagen__content"/>
+                <img src="img/whatsapp.svg" alt="whatsapp" className="contacto-imagen__content"/>
                 <p>(223) 5553322</p>
-                <img src="../public/img/twitter.svg" alt="twitter"/>
+                <img src="/img/twitter.svg" alt="twitter"/>
                 <p>rita_cosmeticos</p>
               </div>
               
               <div className="contacto-imagen">
-                <img src="../public/img/instagram.svg" alt="instagram"/>
+                <img src="/img/instagram.svg" alt="instagram"/>
                 <p>rita_cosmeticos</p>
-                <img src="../public/img/mail.svg" alt="mail" className="contacto-imagen__content"/>
+                <img src="/img/mail.svg" alt="mail" className="contacto-imagen__content"/>
                 <p>rita@tiendanatural.com</p>
               </div>
             </div>
