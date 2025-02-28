@@ -25,7 +25,7 @@ export const GlobalUserProvider = ({ children }) => {
         }
       }
     }, []);
-    const isAdmin = user === ADMIN_USER;
+    const isAdmin = user === adminUser;
 
     return (
       <GlobalUserContext.Provider value={{ user, setUser, isAdmin }}>
