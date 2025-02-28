@@ -124,8 +124,14 @@
     padding: 1rem;
   }
 
+  .section-form, .section-mapa {
+    margin: auto;
+  }
+
   .content-contacto {
     gap: 1rem;
+    display: flex;
+    align-content: center;
   }
 
   .card-mapa iframe {

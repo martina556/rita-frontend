@@ -54,3 +54,14 @@ $background-color: #fafafa;
         }
  } 
 }
+
+@media screen and (max-width: 576px) {
+  .productDetail-main{
+    margin: 2rem;
+    flex-direction: column-reverse;
+
+  }
+  .productDetail-image__product {
+    width: 100%;
+  }
+}
