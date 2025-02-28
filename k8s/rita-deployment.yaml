@@ -19,14 +19,13 @@ spec:
         - name: ghcr-pull-secret
       containers:
         - name: rita
-          image: ghcr.io/martina556/rita:latest
+          image: ghcr.io/lucasmaraz/rita-frontend:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
           volumeMounts:
             - name: frontend-config-volume
-              mountPath: /usr/share/nginx/html/config.js
-              subPath: config.js
+              mountPath: /usr/share/nginx/html/config
       volumes:
         - name: frontend-config-volume
           configMap:
